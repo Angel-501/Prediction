@@ -9,4 +9,6 @@ scipy>=0.15.1
 scikit-learn>=0.18
 matplotlib>=1.4.3
 pandas>=0.19
-
+click==7.1.2
+threadpoolctl==2.1.0
+Werkzeug==1.0.1
