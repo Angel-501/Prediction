@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Incident Prediction</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;}
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid" style="width:100%,height:100%">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h4>Incident Prediction</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li ><a href="/">Sample data Prediction</a></li>
+        <li class="active"><a href="/impact">Entire data Prediction</a></li>
+
+      </ul><br>
+
+    </div>
+
+    <div class="col-sm-9">
+
+
+      <div class="container">
+    <h2>Entire Data Prediction</h2>
+      <hr>
+    <form role="form" method="post" action="/prediction">
+      <div class="form-group row">
+        <div class="col-md-3">
+          <label for="id">Enter ID : </label>
+          <input class="form-control" id="id" type="text" name="id" required>
+        </div>
+        <div class="col-md-3">
+          <label for="active">Enter Active Status</label>
+          <input class="form-control" id="active" type="text" name="active" required>
+        </div>
+        <div class="col-md-3">
+          <label for="count_reassign">Enter Count Reassign</label>
+          <input class="form-control" id="count_reassign" type="text" name="count_reassign" required>
+        </div>
+
+      </div>
+      <div class="form-group row">
+        <div class="col-md-3">
+          <label for="count_opening"> Enter Count Open</label>
+          <input class="form-control" id="count_opening" type="text" name="count_opening" required>
+        </div>
+        <div class="col-md-3">
+          <label for="count_updated">Enter Count Updated Value</label>
+          <input class="form-control" id="count_updated" name="count_updated" type="text" required>
+        </div>
+        <div class="col-md-3">
+          <label for="ID_caller">Enter Caller ID</label>
+          <input class="form-control" id="ID_caller" type="text" name="ID_caller" required>
+        </div>
+
+      </div>
+      <div class="form-group row">
+        <div class="col-md-3">
+          <label for="opened_by">Enter Opened By</label>
+          <input class="form-control" id="opened_by" type="text" name="opened_by" required>
+        </div>
+        <div class="col-md-3">
+          <label for="Created_by">Enter Created By</label>
+          <input class="form-control" id="Created_by" type="text" name="Created_by" required>
+        </div>
+        <div class="col-md-3">
+          <label for="updated_by">Enter Updated By</label>
+          <input class="form-control" id="updated_by" type="text" name="updated_by" required>
+        </div>
+
+      </div>
+      <div class="form-group row">
+        <div class="col-md-3">
+          <label for="location">Enter Location</label>
+          <input class="form-control" id="location" type="text" name="location" required>
+        </div>
+        <div class="col-md-3">
+          <label for="category_ID">Enter Category ID</label>
+          <input class="form-control" id="category_ID" type="text" name="category_ID" required>
+        </div>
+        <div class="col-md-3">
+          <label for="user_symptom">Enter User Symptom</label>
+          <input class="form-control" id="user_symptom" type="text" name="user_symptom" required>
+        </div>
+
+      </div>
+
+      <div class="form-group row">
+        <div class="col-md-3">
+          <label for="Support_group">Enter Support Group</label>
+          <input class="form-control" id="Support_group" type="text" name="Support_group" required>
+        </div>
+        <div class="col-md-3">
+          <label for="support_incharge">Enter Support Incharge</label>
+          <input class="form-control" id="support_incharge" type="text" name="support_incharge" required>
+        </div>
+        <div class="col-md-3">
+          <label for="Doc_knowledge">Enter Doc Knowledge</label>
+          <input class="form-control" id="Doc_knowledge" type="text" name="Doc_knowledge" required>
+        </div>
+
+      </div>
+
+      <div class="form-group row">
+        <div class="col-md-3">
+          <label for="confirmation_check">Enter Confirmation Check</label>
+          <input class="form-control" id="confirmation_check" type="text" name="confirmation_check" required>
+        </div>
+        <div class="col-md-3">
+          <label for="ID_status">Enter ID Statuse</label>
+          <input class="form-control" id="ID_status" type="text" name="ID_status" required>
+        </div>
+        <div class="col-md-3">
+          <label for="type_contact">Enter Type Contact</label>
+          <input class="form-control" id="type_contact" type="text" name="type_contact" required>
+        </div>
+
+      </div>
+      <div class="form-group row">
+        <div class="col-md-3">
+          <label for="notify">Enter Notify</label>
+          <input class="form-control" id="notify" type="text" name="notify" required>
+        </div>
+
+        <div class="col-md-3">
+          <label for="problem_id">Enter Problem ID</label>
+          <input class="form-control" id="problem_id" type="text" name="problem_id" required>
+        </div>
+        <div class="col-md-3">
+          <label for="change_request">Enter Change Request</label>
+          <input class="form-control" id="change_request" type="text" name="change_request" required>
+        </div>
+
+      </div>
+
+
+
+      <button type="submit" class="btn btn-success">Predict Data</button>
+    </form>
+  </div>
+
+
+  <div class="row col-md-9" style="margin-top:15px">
+
+      {% if output2 == 1 %}
+                   <div class="alert alert-success">
+                   <strong>Low Impact</strong> Service is low impacted.
+                   </div>
+      {% elif output2 == 2%}
+                <div class="alert alert-info">
+                <strong>Medium Impact</strong> Service is Moderately impacted.
+                </div>
+      {% elif output2 == 3 %}
+                <div class="alert alert-danger">
+                <strong>High Impact</strong> Service is Highly impacted.
+                </div>
+
+      {% endif %}
+
+
+  </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
